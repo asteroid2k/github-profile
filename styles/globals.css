@@ -1,9 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bgColor: rgba(8, 0, 18, 0.5);
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu;
 }
 
 a {
@@ -12,5 +19,16 @@ a {
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+}
+.highlight-white-5 {
+  box-shadow: inset 0 1px 0 0 rgb(255 255 255/0.05);
+}
+
+@layer components {
+  .bg-blur {
+    @apply bg-[color:var(--bgColor)] backdrop-blur-md backdrop-saturate-200;
+  }
 }
